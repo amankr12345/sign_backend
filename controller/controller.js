@@ -73,3 +73,13 @@ exports.signIn= async (req,res)=>{
     }
 
 }
+exports.getUsers=async (req,res)=>{
+        try{
+            const allUser=await User.find()
+            res.status(200).send(allUser)
+
+    }catch(err)
+    {
+        res.status(500).send(err)
+    }
+}
